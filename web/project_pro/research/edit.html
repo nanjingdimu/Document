@@ -1,0 +1,105 @@
+<template>
+	<require from="../../elements/file"></require>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>新建研究</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <form class="form">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="exampleInputEmail2">项目名称</label>
+            <input type="text" class="form-control" value.bind="store.project.name" disabled>
+          </div>
+          <div class="col-md-3">
+            <label for="exampleInputEmail2">建设性质</label>
+            <input type="text" class="form-control" value.bind="store.project.key_construction_type" disabled>
+          </div>
+          <div class="col-md-3 form-group">
+            <label for="">项目建设单位</label>
+            <input type="text" class="form-control" size="8"  value.bind="store.buildUnitproject" disabled>
+          </div>
+          <div class="col-md-3">
+            <label for="">法人代表</label><!--111-->
+            <!--<input type="text" class="form-control" size="12"  value.bind="" disabled>-->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="">项目拟建设地点</label>
+            <input type="text" class="form-control" value.bind="store.projFeasibility.plan_construction_place">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputEmail2">承担可行性研究的单位</label><!--111-->
+           <input type="text" class="form-control"  >
+          </div>
+          <div class="col-md-4">
+            <label for="">法人代表/负责人</label><!--111-->
+            <input type="text" class="form-control" value.bind="store.projFeasibility.legal_representative" >
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <label for="">项目建设规模</label>
+              <input type="text" class="form-control" size="80"  value.bind="store.projFeasibility.construction_scale" >
+            </div>
+            <div class="form-group">
+              <label for="">项目建成后的使用方式</label>
+               <input type="text" class="form-control" size="80"  value.bind="store.projFeasibility.use_mode" >
+            </div>
+            <div class="form-group">
+              <label for="">项目建设进度</label>
+               <input type="text" class="form-control" size="80"  value.bind="store.projFeasibility.build_process" >
+            </div>
+            <div class="form-group">
+              <label for="">投资估算和资金筹措</label>
+              <input type="text" class="form-control" size="80" value.bind="store.projFeasibility.evaluation" >
+            </div>
+            <div class="form-group">
+              <label for="">项目综合评价结论</label>
+               <input type="text" class="form-control" size="80"  value.bind="store.projFeasibility.conclusion" >
+            </div>
+            <div class="form-group">
+              <label for="">存在问题及建议</label>
+              <input type="text" class="form-control" size="80" value.bind="store.projFeasibility.suggestion" >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="jumbotron">
+              BIM模型
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 pull-right">
+            <button type="button" class="btn btn-default btn-block" click.trigger="store.updateFeasibility()">
+              更新
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group form-inline">
+              <label for="upload">上传可行性研究报告</label>
+              <file success.bind="afterUpload" info.bind="fileInfo"></file>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <button type="button" class="btn btn-default" click.trigger="create()">
+                保存</button>
+              <button type="button" class="btn btn-default" click.trigger="update('待审核')">
+                提交</button>
+              <button type="button" class="btn btn-default" click.trigger="back()">
+                返回</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

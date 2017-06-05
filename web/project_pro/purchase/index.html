@@ -1,0 +1,51 @@
+<template>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>服务采购</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <thead class="text-center">
+              <tr>
+                <th>序号</th>
+                <th>项目名称</th>
+                <th>建设单位</th>
+                <th>项目类型</th>
+                <th>项目类别</th>
+                <th>建筑性质</th>
+                <th>建筑规模</th>
+                <th>计划开始年份</th>
+                <th>计划结束年份</th>
+                <th>总投资</th>
+                <th>项目状态</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr repeat.for="p of store.filteredProjects">
+                <td>${$index+1}</td>
+                <td>${p.name}</td>
+                <td>${p.build_units[0].name}</td>
+                <td>${p.key_type}</td>
+                <td>${p.key_category}</td>
+                <td>${p.key_construction_type}</td>
+                <td>${p.construction_scope}</td>
+                <td>${p.schedule_start_year}</td>
+                <td>${p.schedule_end_year}</td>
+                <td>${p.total_investment}</td>
+                <td>${P.status}</td>
+                <td>
+                  <a class="btn btn-sm btn-info" route-href="route: edit; params.bind: {id: p.id}" >修改</a>
+                  <button type="button" class="btn btn-sm btn-danger">删除</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="btn  btn-default pull-right" route-href="route: new">新增</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,86 @@
+<template>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>新增采购</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="">项目名称</label>
+              <select class="form-control" value.bind="store.selectedProjectId" change.delegate="changeProject()">
+	                	<option repeat.for="option of store.projects" value.bind="option.id">${option.name}</option>
+	            	</select>
+            </div>
+          </form>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>采购内容</th>
+                <th>采购方式</th>
+                <th>招标时间</th>
+                <th>中标单位名称</th>
+                <th>中标单位资质</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a class="btn btn-default" route-href="route: edit; params.bind: {proj_purchase_id: 'xxx'}">修改</a>
+                  <a class="btn btn-default">删除</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+              <tr>
+                <td>3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-default">新增</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

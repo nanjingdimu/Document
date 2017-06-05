@@ -1,0 +1,55 @@
+<template>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>建设手续办理</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <thead class="text-center">
+              <tr>
+                <th>序号</th>
+                <th>年度</th>
+                <th>项目性质</th>
+                <th>项目名称</th>
+                <th>项目编码</th>
+                <th>项目类型</th>
+                <th>项目类别</th>
+                <th>建筑性质</th>
+                <th>建筑规模</th>
+                <th>建设开始时间</th>
+                <th>建设结束时间</th>
+                <th>总投资</th>
+                <th>项目状态</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr repeat.for="p of store.filteredProjects">
+               	<td>${$index+1}</td>
+               	<td>${p.construction_year}</td>
+                <td>${p.property}</td>
+                <td>${p.name}</td>
+                <td>${p.code}</td>
+                <td>${p.key_type}</td>
+                <td>${p.key_category}</td>
+                <td>${p.key_construction_type}</td>
+                <td>${p.construction_scope}</td>
+                <td>${p.schedule_start_year}</td>
+                <td>${p.schedule_end_year}</td>
+                <td>${p.total_investment}</td>
+                <td>${p.status}</td>
+                <td>
+                   <a if.bind="p.status == '就绪' || p.status == '审核失败'" route-href="route: edit; params.bind: {id: p.id}" class="btn btn-sm btn-info">修改</a>
+                  <button class="btn btn-sm btn-danger" click.trigger="delete(p.id)">删除</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="btn  btn-default pull-right" route-href="route: new">新增</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

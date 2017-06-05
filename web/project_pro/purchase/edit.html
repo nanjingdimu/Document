@@ -1,0 +1,108 @@
+<template>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>新增采购-编辑</h4>
+    </div>
+    <div class="ibox-content clearfix">
+    	<form>
+    		<div class="row">
+    			<div class="col-md-4">
+    				<div class="form-group">
+    					<label for="">采购内容</label>
+    					<input type="text" class="form-control" value.bind="store.project.name">
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="form-group">
+    					<label for="">采购时间</label>
+    					<input type="date" class="form-control">
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="form-group">
+    					<label for="">招标时间</label>
+    					<input type="date" class="form-control">
+    				</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-4">
+    				<div class="form-group">
+    					<label for="">中标单位名称</label>
+    					<input type="text" class="form-control" value.bind="store.project.name">
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="form-group">
+    					<label for="">中标单位资质</label>
+    					<input type="text" class="form-control" value.bind="store.project.name">
+    				</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<table class="table table-bordered">
+    					<thead>
+    						<tr>
+    							<td></td>
+    							<td>名称</td>
+    							<td>上传人</td>
+    							<td>上传时间</td>
+    							<td>操作</td>
+    						</tr>
+    					</thead>
+    					<tbody>
+    						<tr>
+    							<td><input type="checkbox" style="width:20px;height:20px"></td>
+    							<td>招标文件</td>
+    							<td></td>
+    							<td></td>
+    							<td>
+    								<a class="btn btn-default">上传</a>
+    								<a class="btn btn-default">下载</a>
+    							</td>
+    						</tr>
+    						<tr>
+    							<td><input type="checkbox" style="width:20px;height:20px"></td>
+    							<td>投标文件</td>
+    							<td></td>
+    							<td></td>
+    							<td>
+    								<a class="btn btn-default">上传</a>
+    								<a class="btn btn-default">下载</a>
+    							</td>
+    						</tr>
+    						<tr>
+    							<td><input type="checkbox" style="width:20px;height:20px"></td>
+    							<td>中标通知书</td>
+    							<td></td>
+    							<td></td>
+    							<td>
+    								<a class="btn btn-default">上传</a>
+    								<a class="btn btn-default">下载</a>
+    							</td>
+    						</tr>
+    						<tr>
+    							<td><input type="checkbox" style="width:20px;height:20px"></td>
+    							<td>合同</td>
+    							<td></td>
+    							<td></td>
+    							<td>
+    								<a class="btn btn-default">上传</a>
+    								<a class="btn btn-default">下载</a>
+    							</td>
+    						</tr>
+    					</tbody>
+    				</table>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<a class="btn btn-default">保存</a>
+    				<a class="btn btn-default">提交</a>
+    			</div>
+    		</div>
+    	</form>
+    </div>
+  </div>
+</template>

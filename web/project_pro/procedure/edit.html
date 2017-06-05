@@ -1,0 +1,179 @@
+<template>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>修改手续</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="form-group">
+          <label for="">项目名称</label>
+          <input type="text" class="form-control" value.bind="store.editProjects.name" disabled>
+        </div>
+         </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>名称</th>
+                <th>取得时间（填空）</th>
+                <th>上传时间</th>
+                <th>上传时间（自动）</th>
+                <th>上传人（自动）</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>环境影响批准书</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目建设用地预审文件</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目国有土地使用权出让合同</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目建设用地规划许可证</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目建设批准书</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目国有土地使用证</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>建设工程规划许可证</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>抗震设防审核意见书</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>项目消防设计审查备案</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>人民防空工程建设许可证</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>防雷设施设计审核书</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>建设工程质量监督申请表</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>防雷设施设计审核书</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>工程施工安全监督报告</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" style="width:20px;height:20px"></td>
+                <td>建筑工程施工许可证</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-default" click.trigger="addLine()">新增</a>
+          <a class="btn btn-default" click.trigger="create()">保存</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

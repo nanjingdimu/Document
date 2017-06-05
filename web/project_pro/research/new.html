@@ -1,0 +1,253 @@
+<template>
+	<require from="../../elements/file"></require>
+ <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h5>新建可行性研究申请
+      </h5>
+    </div>
+    <div class="ibox-content">
+      <form class="form">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">项目名称</label>
+              	<select class="form-control" value.bind="store.selectedProjectId" change.delegate="changeProject()">
+              		<option>下拉选择</option>
+                	<option repeat.for="option of store.projects" value.bind="option.id">${option.name}</option>
+            	</select>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">年度</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.construction_year">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">项目性质</label>
+                <input readonly type="text" class="form-control"  value.bind="store.project.property">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">排序号</label>
+                <input readonly type="text" class="form-control"  value.bind="store.project.order">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">项目类型</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.key_type">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+            	<label for="">建设单位</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.build_units[0].name">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">项目编码</label>
+               <input readonly type="text" class="form-control" value.bind="store.project.code">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">建筑规模</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.construction_scope">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+               <label for="">计划开始年份</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.schedule_start_year">
+             </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">计划结束年份</label>
+               <input readonly type="text" class="form-control" value.bind="store.project.schedule_end_year	">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">项目类别</label>
+             <input readonly type="text" class="form-control" value.bind="store.project.key_category">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+                <label for="">是否有供电所</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.is_power_station">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">建设性质</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.key_construction_type">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">总投资</label>
+               <input readonly type="text" class="form-control" value.bind="store.project.total_investment">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">建设费</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.construction_cost">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">征地费</label>
+             <input readonly type="text" class="form-control" value.bind="store.project.land_use_cost">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">到上年已累计下达投资计划</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.past_year_plan">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">本年投资计划合计</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.year_total">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">企业自有</label>
+               <input readonly type="text" class="form-control" value.bind="store.project.company_own">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">地方拆迁补偿</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.local_compensation">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">建设用地情况</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.construction_land">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">项目建议书或可研报告</label><!--22-->
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">纳入项目储备</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.project_reserve">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">征地费</label>
+              <input readonly type="text" class="form-control" value.bind="store.project.land_use_cost">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="">项目介绍</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.introduction">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+                <label for="">备注</label>
+                <input readonly type="text" class="form-control" value.bind="store.project.remark">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row"> 
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">项目拟建设地点</label>
+              <input type="text" class="form-control" value.bind="store.projFeasibility.plan_construction_place">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group"><!--222-->
+              <label for="">承担可行性研究的单位</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group"><!--222-->
+              <label for="">法人代表/负责人</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+           <div class="form-group"> 
+              <label for="">项目建设规模</label>
+               <input type="text" class="form-control" value.bind="store.projFeasibility.construction_scale">
+           </div>   
+           <div class="form-group">
+              <label for="">项目建成后的使用方式</label>
+              <input type="text" class="form-control" value.bind="store.projFeasibility.use_mode"> 
+           </div>
+           <div class="form-group">
+              <label for="">项目建设进度</label>
+               <input type="text" class="form-control" value.bind="store.projFeasibility.build_process"> 
+           </div>
+           <div class="form-group">
+              <label for="">投资估算和资金筹措</label>
+              <input type="text" class="form-control" value.bind="store.projFeasibility.evaluation"> 
+           </div>
+           <div class="form-group">
+              <label for="">项目综合评价结论</label>
+              <input type="text" class="form-control" value.bind="store.projFeasibility.conclusion"> 
+           </div>
+           <div class="form-group">
+              <label for="">存在问题及建议</label>
+              <input type="text" class="form-control" value.bind="store.projFeasibility.suggestion"> 
+           </div>
+          </div>
+          <div class="col-md-4">
+            <div class="jumbotron">
+              BIM模型
+            </div>
+          </div>
+        </div> 
+        <hr>
+        <div class="row">
+           <div class="col-md-6 text-center">
+           	  <file success.bind="afterUpload" info.bind="fileInfo"></file>
+              <button type="button" class="btn btn-primary"> 上传可行性研究报告</button>
+            </div>
+            <div class="col-md-6">
+              <button type="submit" class="btn btn-default" click.trigger="create()">保存</button>
+              <a class="btn btn-default" click.trigger="back()">返回</a>
+           </div>
+        </div>
+      </form>
+    </div>
+   </div>
+</template>

@@ -1,0 +1,117 @@
+<template>
+	<require from="../../elements/file"></require>
+  <div class="ibox">
+    <div class="ibox-title blue-bg">
+      <h4>新建设计</h4>
+    </div>
+    <div class="ibox-content clearfix">
+      <form class="form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">项目名称</label>
+                  	<select class="form-control" value.bind="store.selectedProjectId" change.delegate="changeProject()">
+	                	<option repeat.for="option of store.projects" value.bind="option.id">${option.name}</option>
+	            	</select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计文件</label>
+                 <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('1','上传初步设计文件','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计建筑图纸</label>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('2','上传初步设计建筑图纸','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计结构图纸</label>
+                   <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('3','上传初步设计结构图纸','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计水图纸</label>
+                   <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('4','上传初步设计水图纸','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计电气图纸</label>
+                  <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('5','上传初步设计电气图纸','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="">上传初步设计暖通图纸</label>
+                   <a class="btn btn-default" data-toggle="modal" data-target="#myModal" click.trigger ="joinInfo('6','上传初步设计暖通图纸','1')">上传</a>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="jumbotron">
+              BIM模型
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+          <a href="javascript:;" class="btn btn-default" click.trigger="save()">保存</a>
+          <a href="javascript:;" class="btn btn-default" click.trigger="back()">返回</a>
+        </div>
+	  <!--上传弹出框-->
+	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		       <div class="modal-header">
+		         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		       </div>
+		       <div class="modal-body">
+		         <div class="row">
+		            <div class="col-md-12">
+		                   <file success.bind="afterUpload" info.bind="fileInfo"></file>
+		            </div> 
+		         </div>
+		          <div class="row">
+		         <div class="col-md-12">
+		                <a href="javascript:;" class="btn btn-default">已上传的内容</a>
+		                 <ul>
+					         <li repeat.for="f of store.listFiles">
+					         <a href.bind="f.info.url" download>${f.info.name}</a><a href="javascript:;" class="btn btn-default" click.trigger="deleteFileById(f.id)">删除</a>
+					         </li>
+		                 </ul>
+		            </div> 
+		           </div>  
+		       </div>
+		       <div class="modal-footer">
+		         <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+		       </div>
+		    </div>
+		  </div>
+	  </div>
+	  
+  
+     
+      </form>
+    </div>
+  </div>
+</template>
